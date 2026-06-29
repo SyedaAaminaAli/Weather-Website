@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weather App</title>
+
+  <!-- ========================= -->
+  <!-- CSS STYLING STARTS HERE  -->
+  <!-- ========================= -->
+  <style>
+
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:linear-gradient(-45deg,#4facfe,#00c6ff,#89f7fe,#66a6ff);
+    background-size:400% 400%;
+    animation:gradientBG 12s ease infinite;
+
+}
+
+.container{
+
+    width:90%;
+    max-width:500px;
+
+    text-align:center;
+
+}
+
+h1{
+
+    color:white;
+
+    font-size:42px;
+
+    margin-bottom:10px;
+
+    animation:glow 2s infinite alternate;
+
+}
+
+.subtitle{
+
+    color:white;
+
+    margin-bottom:35px;
+
+    opacity:.9;
+
+}
+
+.search-box{
+
+    display:flex;
+
+    gap:12px;
+
+    justify-content:center;
+
+    margin-bottom:30px;
+
+}
+
+input{
+
+    flex:1;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:50px;
+
+    font-size:17px;
+
+    outline:none;
+
+    background:rgba(255,255,255,.2);
+
+    color:white;
+
+    backdrop-filter:blur(10px);
+
+}
+
+input::placeholder{
+
+    color:white;
+
+}
+
+input:focus{
+
+    box-shadow:0 0 20px white;
+
+}
+
+button{
+
+    padding:15px 25px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#0d6efd;
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    font-size:16px;
+
+}
+
+button:hover{
+
+    background:#084298;
+
+    transform:translateY(-3px);
+
+}
+
+#result{
+
+    display:none;
+
+    margin-top:25px;
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(15px);
+
+    padding:25px;
+
+    border-radius:20px;
+
+    color:white;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.25);
+
+    animation:fade .5s; 
+}
+/* 
+#result{
+
+    display:none;
+
+    width:420px;
+    max-width:90%;
+
+    margin:25px auto;
+
+    background:rgba(255,255,255,.22);
+
+    backdrop-filter:blur(15px);
+
+    padding:30px;
+
+    border-radius:20px;
+
+    color:white;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+
+    animation:fade .5s; */
+
+
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes glow{
+
+from{
+
+text-shadow:0 0 5px white;
+
+}
+
+to{
+
+text-shadow:0 0 20px cyan;
+
+}
+
+}
+
+@keyframes gradientBG{
+
+0%{
+
+background-position:0% 50%;
+
+}
+
+50%{
+
+background-position:100% 50%;
+
+}
+
+100%{
+
+background-position:0% 50%;
+
+}
+
+}
+#result{
+
+    width:420px;
+    max-width:90%;
+    margin:30px auto;
+
+}
+
+#result img{
+
+    width:90px;
+    height:90px;
+
+}
+
+#result h1{
+
+    font-size:50px;
+    margin:10px 0;
+
+}
+
+#result h3{
+
+    font-size:28px;
+    margin-bottom:10px;
+
+}
+
+  </style>
+</head>
+
+
+<body>
+
+<div class="container">
+
+    <h1>🌤 Weather Website</h1>
+    <p class="subtitle">Get real-time weather information for any city.</p>
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="cityInput"
+            placeholder="🔍 Enter city name">
+
+        <button onclick="getWeather()">
+            Get Weather
+        </button>
+
+    </div>
+
+    <div id="result"></div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+
+
+<!-- Link to Get API Key: https://openweathermap.org/ -->
