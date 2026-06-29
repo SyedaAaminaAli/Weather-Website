@@ -3,12 +3,6 @@
 A modern weather application that allows users to search for any city and view real-time weather information through a clean and intuitive interface.
 
 
-
-## 📸 Screenshot
-
-
-![Weather Website](images/Screenshot%20(21).png))
-
 ## ✨ Features
 
 - Search weather by city name
@@ -23,6 +17,11 @@ A modern weather application that allows users to search for any city and view r
 - JavaScript
 - OpenWeather API
 - ## 👩‍💻 Author
+
+- ## 📸 Screenshot
+
+
+![Weather Website](images/Screenshot%20(21).png))
 
 **Syeda Aamina Ali**
 
