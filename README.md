@@ -6,7 +6,8 @@ A modern weather application that allows users to search for any city and view r
 
 ## 📸 Screenshot
 
-![Weather Website](images/weather-website.png)
+
+![Weather Website](images/Screenshot%20(21).png))
 
 ## ✨ Features
 
